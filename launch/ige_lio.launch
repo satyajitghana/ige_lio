@@ -9,11 +9,11 @@
 
 	<param name="edge_plane_flag" type="int" value="3"/>
 	<param name="point_filter_num" type="int" value="2"/>               
-	<param name="max_iteration" type="int" value="4" />
+	<param name="max_iteration" type="int" value="10" />
 
-	<param name="filter_size_map" type="double" value="0.3" />
+	<param name="filter_size_map" type="double" value="0.05" />
 
-	<param name="filter_size_surf" type="double" value="0.5" />
+	<param name="filter_size_surf" type="double" value="0.1" />
 	<param name="filter_size_edge" type="double" value="0.1" />
 	<param name="filter_size_inten_edge" type="double" value="0.1" />
 

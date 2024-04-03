@@ -13,7 +13,6 @@ preprocess:
     scan_rate: 10                # only need to be set for velodyne, unit: Hz,
     blind: 0.1
 
-
     intensity_dient_min: 20 
     intensity_dient_max: 20 
     lookfor_min_num: 1
@@ -39,7 +38,7 @@ mapping:
     image_gradient_threshold:  20
     det_range:     100.0
     extrinsic_est_en:  true      # true: enable the online estimation of IMU-LiDAR extrinsic,
-    extrinsic_T: [ 0.25, 0.06, 0.65]
+    extrinsic_T: [0.011, 0.02329, -0.04412]
     extrinsic_R: [ 1, 0, 0,
                    0, 1, 0,
                    0, 0, 1]
