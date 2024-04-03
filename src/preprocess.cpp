@@ -418,7 +418,7 @@ void Preprocess::avia_handler(const livox_ros_driver::CustomMsg::ConstPtr &msg)
     printf("avia Feature extraction time: %lf \n", avia_time / avia_count);
 
     static bool is_file_created = false;
-    std::string WORK_SPACE_PATH = "/home/bupo/my_study/ig_lio_git/ig_lio";
+    std::string WORK_SPACE_PATH = "/home/inkers/satyajit/catkin_ige_lio";
     if(1)
     {
       if (!is_file_created) 
@@ -481,9 +481,9 @@ void Preprocess::avia_handler(const livox_ros_driver::CustomMsg::ConstPtr &msg)
     cv::cvtColor(image_intensity, image_intensity, CV_GRAY2RGB);
     cv::cvtColor(image_range, image_range, CV_GRAY2RGB);
     cv::cvtColor(image_intensity_gradient, image_intensity_gradient, CV_GRAY2RGB);
-    cv::putText(image_intensity, "Intensity", cv::Point2f(5, 20 ), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
-    cv::putText(image_range, "Range",     cv::Point2f(5, 20), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
-    cv::putText(image_intensity_gradient, "Intensity_Gradient",     cv::Point2f(5, 20), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+    cv::putText(image_intensity, "Intensity", cv::Point2f(5, 20 ), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+    cv::putText(image_range, "Range",     cv::Point2f(5, 20), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+    cv::putText(image_intensity_gradient, "Intensity_Gradient",     cv::Point2f(5, 20), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
     image_header = msg->header;
   }
 }
@@ -1087,9 +1087,9 @@ void Preprocess::oust64_handler(const sensor_msgs::PointCloud2::ConstPtr &msg)
     cv::cvtColor(image_intensity, image_intensity, CV_GRAY2RGB);
     cv::cvtColor(image_range, image_range, CV_GRAY2RGB);
     cv::cvtColor(image_intensity_gradient, image_intensity_gradient, CV_GRAY2RGB);
-    cv::putText(image_intensity, "Intensity", cv::Point2f(5, 20 ), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
-    cv::putText(image_range, "Range",     cv::Point2f(5, 20), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
-    cv::putText(image_intensity_gradient, "Intensity_Gradient",     cv::Point2f(5, 20), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+    cv::putText(image_intensity, "Intensity", cv::Point2f(5, 20 ), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+    cv::putText(image_range, "Range",     cv::Point2f(5, 20), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+    cv::putText(image_intensity_gradient, "Intensity_Gradient",     cv::Point2f(5, 20), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
     image_header = msg->header;
   }
 }
@@ -2459,9 +2459,9 @@ void Preprocess::rs_handler(const sensor_msgs::PointCloud2_<allocator<void>>::Co
     cv::cvtColor(image_intensity, image_intensity, CV_GRAY2RGB);
     cv::cvtColor(image_range, image_range, CV_GRAY2RGB);
     cv::cvtColor(image_intensity_gradient, image_intensity_gradient, CV_GRAY2RGB);
-    cv::putText(image_intensity, " ", cv::Point2f(5, 20 ), CV_FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(255,0,255), 1);
-    cv::putText(image_range, " ",     cv::Point2f(5, 20), CV_FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(255,0,255), 1);
-    cv::putText(image_intensity_gradient, " ",     cv::Point2f(5, 20), CV_FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(255,0,255), 1);
+    cv::putText(image_intensity, " ", cv::Point2f(5, 20 ), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(255,0,255), 1);
+    cv::putText(image_range, " ",     cv::Point2f(5, 20), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(255,0,255), 1);
+    cv::putText(image_intensity_gradient, " ",     cv::Point2f(5, 20), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(255,0,255), 1);
     image_header = msg->header;
   }
 }

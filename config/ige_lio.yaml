@@ -1,14 +1,14 @@
 common:
 #RS LiDar
-    lid_topic: "/rslidar_points"
-    imu_topic: "/chcnav_demo/imu"
+    lid_topic: "/livox/lidar"
+    imu_topic: "/livox/imu"
     gps_topic:  "/gnss" # czy
     # lid_topic: "/rslidar_points1"
     # imu_topic: "/imu/data1"
     time_sync_en: false         # ONLY turn on when external time synchronization is really not possible
     
 preprocess:
-    lidar_type: 4                # 1 for Livox serials LiDAR, 2 for Velodyne LiDAR, 3 for ouster LiDAR, 4 RS
+    lidar_type: 1                # 1 for Livox serials LiDAR, 2 for Velodyne LiDAR, 3 for ouster LiDAR, 4 RS
     scan_line: 16
     scan_rate: 10                # only need to be set for velodyne, unit: Hz,
     blind: 0.1
@@ -55,5 +55,5 @@ publish:
     pub_odom_path: true # 是否保存位姿 czy
 
 pcd_save:
-    pcd_save_en: false
-    interval: 100                 # how many LiDAR frames saved in each pcd file; 
+    pcd_save_en: true
+    interval: -1                 # how many LiDAR frames saved in each pcd file; 

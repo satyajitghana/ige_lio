@@ -22,7 +22,7 @@ if(CMAKE_SYSTEM_PROCESSOR MATCHES "(x86)|(X86)|(amd64)|(AMD64)" )
   message("Processer number:  ${N}")
   if(N GREATER 4)
     add_definitions(-DMP_EN)
-    add_definitions(-DMP_PROC_NUM=3)
+    add_definitions(-DMP_PROC_NUM=10)
     message("core for MP: 3")
   elseif(N GREATER 3)
     add_definitions(-DMP_EN)
@@ -42,8 +42,8 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}   ${OpenMP_C_FLAGS}")
 
 
 #set(cv_bridge_1_DIR /usr/local/include/cv_bridge_1)
-set(OpenCV_DIR "/home/bupo/anzhuang/opencv-3.4.1/build")
-set(cv_bridge_DIR /home/bupo/cv_bridge_ws/devel/share/cv_bridge/cmake)
+# set(OpenCV_DIR "/home/bupo/anzhuang/opencv-3.4.1/build")
+# set(cv_bridge_DIR /home/bupo/cv_bridge_ws/devel/share/cv_bridge/cmake)
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   nav_msgs
@@ -64,7 +64,7 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(Eigen3 REQUIRED)
 find_package(PCL 1.8 REQUIRED)
 find_package( Sophus REQUIRED )
-find_package(OpenCV 3 REQUIRED)
+find_package(OpenCV 4 REQUIRED)
 
 include(cmake/geographic.cmake)
 
@@ -94,6 +94,8 @@ catkin_package(
   INCLUDE_DIRS
 )
 
-add_executable(iglio_mapping src/laserMapping.cpp include/ikd-Tree/ikd_Tree.cpp src/preprocess.cpp)
-target_link_libraries(iglio_mapping ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${PYTHON_LIBRARIES} ${Sophus_LIBRARIES} fmt ${ALL_TARGET_LIBRARIES})
-target_include_directories(iglio_mapping PRIVATE ${PYTHON_INCLUDE_DIRS})
+find_package(fmt)
+
+add_executable(igelio_mapping src/laserMapping.cpp include/ikd-Tree/ikd_Tree.cpp src/preprocess.cpp)
+target_link_libraries(igelio_mapping ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${PYTHON_LIBRARIES} ${Sophus_LIBRARIES} ${ALL_TARGET_LIBRARIES} fmt::fmt-header-only)
+target_include_directories(igelio_mapping PRIVATE ${PYTHON_INCLUDE_DIRS})
