@@ -1,30 +1,39 @@
-# IGE_LIO (Continuously Updating and Improving)
+# IGE_LIO
+
+
 
 ## 1. Prerequisites
+
 ### 1.1 **Ubuntu** and **ROS**
 
 * Ubuntu >= 18.04.
 * ROS    >= Melodic.
 * PCL    >= 1.8.
-* Eigen  >= 3.3.4.
+* Eigen  >= 3.3.4
+* OpenCV >= 4.1.0
+
 ### 1.2 **livox_ros_driver**
 Follow [livox_ros_driver Installation](https://github.com/Livox-SDK/livox_ros_driver).
-
 
 ## 2. Build
 Clone the repository and catkin_make:
 
 ```
     cd ~/$A_ROS_DIR$/src
-    git clone https://github.com/tapowanliwuyun/IGE_LIO.git
-    cd IGE_LIO
+    git clone https://github.com/satyajitghana/ige_lio.git
+    cd ige_lio
     cd ..
     catkin_make
-    source devel/setup.bash
+    . devel/setup.bash
 ```
+
 ## 3 Run IGE_LIO
 
+```
+roslaunch ige_lio ige_lio.launch
+```
 
+![custom bag](pic/custom_bag.png)
 
 
 ### 3.1  Our private datasets
@@ -33,7 +42,7 @@ Clone the repository and catkin_make:
 run our datasets 
 
 ```
-roslaunch ig_lio mapping_my_rs_hall_IGE_LIO.launch
+roslaunch ige_lio mapping_my_rs_hall_IGE_LIO.launch
 rosbag play xxx.bag
 ```
 
@@ -78,3 +87,5 @@ Edit `config/xxx.yaml` and  `launch/xxx.launch` to set the below parameters:
 
 ## 5. Acknowledgements
 Thanks for [FAST-LIO2](https://github.com/hku-mars/FAST_LIO). Thanks for these outstanding work and its contributors.
+
+Also thanks to [IG-LIO](https://github.com/zijiechenrobotics/ig_lio/)
