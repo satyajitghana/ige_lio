@@ -664,7 +664,7 @@ void publish_frame_world(const ros::Publisher & pubLaserCloudFull_)
             pointBodyToWorld(&feats_undistort->points[i], \
                                 &laserCloudWorld->points[i]);//转换到世界坐标系
         }
-        *pcl_wait_save += *feats_undistort;//把结果压入到pcd中
+        *pcl_wait_save += *laserCloudWorld;  // 把结果压入到pcd中
 
         static int scan_wait_num = 0;
         scan_wait_num ++;
